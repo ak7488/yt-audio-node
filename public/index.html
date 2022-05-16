@@ -1,43 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>okajsl</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" type="image/ico" href="/assets/favicon.0e726a38.ico" />
+    <title>Solid App</title>
+    <script type="module" crossorigin src="/assets/index.871ab747.js"></script>
+    <link rel="stylesheet" href="/assets/index.03056a2e.css">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
 
-    <script>
-        const audio = document.createElement('audio');
-        audio.src = '/audio/aqz-KE-bpKQ';
-        audio.controls = true;
-
-        const range = document.createElement('input');
-        range.type = 'range'
-
-        audio.onloadedmetadata = (e) => {
-            range.max = audio.duration
-            range.min = 0
-        }
-        audio.ontimeupdate = () => {range.value = audio.currentTime}
-
-        audio.onseeked = (e) => {
-            console.log(e.target.webkitAudioDecodedByteCount);
-        }
-
-        // range.onchange = () => {
-        //     // audio.src = `/audio/aqz-KE-bpKQ?st=${range.value}`/
-        //     // audio.currentTime = range.value
-        //     console.log(audio.seekable.start(audio.seekable.length - 1))
-        //     console.log(audio.seekable.end(audio.seekable.length - 1));
-        //     console.log(audio.buffered.start(0), audio.buffered.length)
-        // }
-
-        const body = document.querySelector('body');
-        body.appendChild(audio);
-        body.appendChild(range);
-    </script>
-</body>
+    
+  </body>
 </html>

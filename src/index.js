@@ -1,11 +1,13 @@
 const express = require('express');
 const ytdl = require('ytdl-core');
 const path = require('path');
-const axios = require('axios')
+const axios = require('axios');
+const cors = require('cors')
 
 const app = express();
 const port = process.env.PORT;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
@@ -27,6 +29,7 @@ app.get('/audio/:id', async (req, res) => {
 
         res.setHeader('Accept-Ranges', "bytes");
         res.setHeader('Content-Length', contentLength.toString());
+        res.setHeader('Content-Type', 'audio/mp3')
 
         ytdl.downloadFromInfo(info, {quality: '140'}).pipe(res);
     } catch (e) {
